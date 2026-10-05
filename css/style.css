@@ -1,0 +1,521 @@
+/* =========================================================
+   DESIGN SYSTEM - ORGANIZAÇÃO DO TERCEIRO SETOR
+   ========================================================= */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   VARIÁVEIS DO DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+
+    /* CORES PRIMÁRIAS */
+    --verde-vivido: #3EA328;
+    --azul-intenso: #005573;
+
+    /* COR DE DESTAQUE */
+    --laranja-destaque: #FF9F1C;
+
+    /* CORES NEUTRAS */
+    --fundo-pagina: #EAF4F0;
+    --fundo-cartao: #FFFFFF;
+    --texto-corpo: #1E2D2B;
+
+
+    /* ESCALA TIPOGRÁFICA - 5 TAMANHOS */
+
+    --fonte-1: 1rem;
+    --fonte-2: 1.1rem;
+    --fonte-3: 1.2rem;
+    --fonte-4: 1.7rem;
+    --fonte-5: 2.2rem;
+
+
+    /* ESCALA MODULAR DE ESPAÇAMENTOS */
+
+    --espaco-1: 0.5rem;
+    --espaco-2: 1rem;
+    --espaco-3: 1.5rem;
+    --espaco-4: 2rem;
+    --espaco-5: 2.5rem;
+}
+
+
+/* =========================================================
+   ESTILOS GERAIS
+   ========================================================= */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+
+    color: var(--texto-corpo);
+    background-color: var(--fundo-pagina);
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================================= */
+
+header {
+    background-color: var(--azul-intenso);
+    color: #ffffff;
+
+    padding: 1.5rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    border-bottom: 4px solid var(--verde-vivido);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: var(--fonte-5);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: var(--fonte-2);
+
+    padding: 0.4rem 0.8rem;
+
+    border-radius: 4px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--verde-vivido);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   GRID DE 12 COLUNAS
+   ========================================================= */
+
+main {
+    flex: 1;
+
+    max-width: 950px;
+    width: 90%;
+
+    margin: var(--espaco-5) auto;
+
+    padding: var(--espaco-5);
+
+    background-color: var(--fundo-cartao);
+
+    border-radius: 12px;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+
+    /* GRID DE 12 COLUNAS */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: var(--espaco-3);
+}
+
+
+/* =========================================================
+   SEÇÃO PRINCIPAL
+   ========================================================= */
+
+section {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: var(--espaco-3);
+}
+
+section h2 {
+    grid-column: 1 / -1;
+
+    color: var(--azul-intenso);
+
+    margin-bottom: var(--espaco-3);
+
+    font-size: var(--fonte-5);
+
+    font-weight: 700;
+}
+
+section img {
+    grid-column: 2 / 12;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: 10px;
+
+    margin-bottom: var(--espaco-3);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+section p {
+    grid-column: 2 / 12;
+
+    font-size: var(--fonte-3);
+
+    color: var(--texto-corpo);
+
+    max-width: 750px;
+
+    margin: 0 auto var(--espaco-3) auto;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   BOTÕES DE AÇÃO
+   ========================================================= */
+
+.btn-acao {
+    display: inline-block;
+
+    background-color: #FF9F1C;
+    color: #1E2D2B;;
+
+    padding: 1rem 2rem;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: var(--fonte-2);
+
+    border: none;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 8px rgba(255, 159, 28, 0.3);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.3s ease;
+}
+
+.btn-acao:hover {
+    background-color: #e68a00;
+
+    transform: translateY(-2px);
+}
+.btn-acao:focus {
+    outline: 3px solid var(--verde-vivido);
+    outline-offset: 2px;
+}   
+.btn-acao:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+footer {
+    background-color: var(--azul-intenso);
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 1.2rem;
+
+    margin-top: auto;
+
+    font-size: var(--fonte-1);
+
+    border-top: 4px solid var(--verde-vivido);
+}
+
+
+/* =========================================================
+   BREAKPOINT 1 — DESKTOP PANORÂMICO
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    main {
+        max-width: 1100px;
+    }
+
+    section img {
+        grid-column: 3 / 11;
+    }
+
+    section p {
+        grid-column: 3 / 11;
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 2 — DESKTOP / NOTEBOOK
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    main {
+        width: 92%;
+        padding: var(--espaco-4);
+    }
+
+    section img {
+        grid-column: 2 / 12;
+    }
+
+    section p {
+        grid-column: 2 / 12;
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 3 — TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: var(--espaco-3);
+    }
+
+    header h1 {
+        font-size: var(--fonte-4);
+    }
+
+    nav {
+        gap: var(--espaco-2);
+    }
+
+    main {
+        width: 94%;
+        padding: var(--espaco-4);
+    }
+
+    section h2 {
+        font-size: var(--fonte-4);
+    }
+
+    section img {
+        grid-column: 2 / 12;
+    }
+
+    section p {
+        grid-column: 2 / 12;
+        font-size: var(--fonte-2);
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 4 — CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: var(--espaco-2);
+    }
+
+    nav {
+        flex-direction: column;
+
+        gap: var(--espaco-1);
+    }
+
+    main {
+        width: 95%;
+
+        padding: var(--espaco-3);
+
+        margin: var(--espaco-3) auto;
+    }
+
+    section h2 {
+        font-size: var(--fonte-4);
+    }
+
+    section img {
+        grid-column: 1 / -1;
+    }
+
+    section p {
+        grid-column: 1 / -1;
+
+        font-size: var(--fonte-2);
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 5 — CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: var(--espaco-2);
+    }
+
+    header h1 {
+        font-size: var(--fonte-4);
+    }
+
+    main {
+        width: 96%;
+
+        padding: var(--espaco-2);
+    }
+
+    section {
+        gap: var(--espaco-2);
+    }
+
+    section h2 {
+        font-size: var(--fonte-3);
+
+        margin-bottom: var(--espaco-2);
+    }
+
+    section img {
+        grid-column: 1 / -1;
+
+        margin-bottom: var(--espaco-2);
+    }
+
+    section p {
+        grid-column: 1 / -1;
+
+        font-size: var(--fonte-1);
+    }
+
+    footer {
+        font-size: var(--fonte-1);
+
+        padding: var(--espaco-2);
+    }
+}
+* =========================================================
+   FEEDBACK VISUAL
+   ========================================================= */
+
+/* Badge */
+.badge {
+    display: inline-block;
+    background-color: #247A1F;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: var(--espaco-2);
+}
+
+/* Alerta */
+.alerta {
+    background-color: #e6f4ea;
+    color: #137333;
+    border: 1px solid #3EA328;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: var(--fonte-2);
+    font-weight: 500;
+    margin-bottom: var(--espaco-2);
+}
+
+/* Toast */
+.toast {
+    background-color: var(--azul-intenso);
+    color: #ffffff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: var(--fonte-2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+    margin-bottom: var(--espaco-2);
+}
+/* =========================
+   CARDS DOS PROJETOS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espaco-3);
+    width: 100%;
+}
+
+.card {
+    background-color: var(--fundo-cartao);
+    padding: var(--espaco-3);
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: var(--azul-intenso);
+    margin-bottom: var(--espaco-2);
+}
+
+
+.card p {
+    color: var(--texto-corpo);
+}
